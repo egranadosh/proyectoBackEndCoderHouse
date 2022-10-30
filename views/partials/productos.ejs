@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <%- include("./head")  %>
+</head>
+<body>
+    <table class="table table-striped">
+        <thead class="table-light">
+            <tr>
+                <th>ID</th>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Imagen</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                
+                <% products.forEach(Producto => { %>
+                <tr>
+                  <th scope="row"></th>
+                  <td><%= Producto.id %></td>
+                  <td><%= Producto.title %></td>
+                  <td><%= Producto.price %></td>
+                  <td>
+                    <img src=<%= Producto.thumbnail %> alt="img" width="50">
+                  </td>
+                </tr>
+                <% }) %>
+            
+               
+            </tr>
+    
+        </tbody>
+    
+    </table>
+    
+    <div class="text-center">
+        <a href="/" class="btn btn-dark">Ingresar Producto</a>
+    </div>
+</body>
+</html>
